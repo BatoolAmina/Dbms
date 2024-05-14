@@ -1,0 +1,72 @@
+select * from Employee where length(name) = 4 AND
+name like "_s%";
+
+select Employee.empid, Employee.name, Department.DeptId
+from Employee 
+INNER JOIN Department ON
+Employee.DeptId = Department.DeptId;
+
+select * from Employee WHERE
+city != "LUCKNOW";
+
+select Employee.empid, Employee.name, Department.DeptId
+from Employee 
+LEFT OUTER JOIN Department ON
+Employee.DeptId = Department.DeptId;
+
+update employee set city = "Bombay"
+where city = "Kanpur";
+Select * from employee;
+
+select * from employee where salary = (select Max(salary) from Employee);
+
+SELECT * FROM EMPLOYEE WHERE 
+NAME LIKE "b%" AND
+CITY LIKE "L%";
+
+alter table employee add Commission INT(4);
+
+ALTER TABLE EMPLOYEE
+ADD FOREIGN KEY (DEPTID) REFERENCES DEPARTMENT(DEPTID);
+
+SELECT LOWER("INTEGRAL UNIVERSITY, LUCKNOW");
+
+SELECT nAME, ADDRESS FROM EMPLOYEE WHERE STATE != "up";
+
+SELECT * FROM EMPLOYEE WHERE
+NAME LIKE '_r%' OR
+name like '_j%';
+
+SELECT Sum(Salary),
+Avg(Salary), count(*)
+from Employee;
+
+Alter table Employee 
+ADD remarks varchar(10);
+
+CREATE VIEW Employees AS
+SELECT Name, EmpId
+FROM Employee
+WHERE City = 'Lucknow';
+SELECT * from Employees;
+
+CREATE OR REPLACE VIEW Employees AS
+SELECT EmpId, Name, address
+FROM Employee
+WHERE City = 'Lucknow';
+SELECT * from Employees;
+
+SELECT * from Employee right outer join department ON
+employee.deptid = department.deptid;
+
+SELECT COUNT(*) from Employee WHERE
+name like 'd%';
+
+SELECT max(salary), min(salary) from Employee;
+
+SELECT *, COUNT(*) from Employee
+group by DeptId;
+
+
+
+
